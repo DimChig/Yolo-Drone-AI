@@ -297,46 +297,6 @@ def drawJoystick(frame, cx, cy, radius, joystick_x, joystick_x_max, joystick_y, 
     cv2.circle(frame, (int(cx + px_r * radius), int(cy + py_r * radius)), 10, active_color, -1)
     cv2.circle(frame, (int(cx + px_r * radius), int(cy + py_r * radius)), 10, active_color_secondary, 2)
 
-    # Load the image you want to display
-    # joystick_image = cv2.imread('footage/Skibidi.png', cv2.IMREAD_UNCHANGED)  # Use full path
-    # if joystick_image is None:
-    #     raise ValueError("Image not found")
-    #
-    # # Calculate new dimensions based on scale factor
-    # scale_factor = 0.2
-    # new_width = int(joystick_image.shape[1] * scale_factor)
-    # new_height = int(joystick_image.shape[0] * scale_factor)
-    # joystick_image = cv2.resize(joystick_image, (new_width, new_height))
-    #
-    # # Calculate the position to place the image
-    # pos_x = int(cx + px_r * radius) - new_width // 2
-    # pos_y = int(cy + py_r * radius) - new_height // 2
-    #
-    # # Determine the region within the frame where the image will be placed
-    # start_x = max(pos_x, 0)
-    # end_x = min(pos_x + new_width, frame.shape[1])
-    # start_y = max(pos_y, 0)
-    # end_y = min(pos_y + new_height, frame.shape[0])
-    #
-    # # Crop the image if it goes outside the frame
-    # img_start_x = max(0, -pos_x)
-    # img_end_x = new_width - max(0, pos_x + new_width - frame.shape[1])
-    # img_start_y = max(0, -pos_y)
-    # img_end_y = new_height - max(0, pos_y + new_height - frame.shape[0])
-    #
-    # # Overlay the image on the frame
-    # for i in range(img_start_y, img_end_y):
-    #     for j in range(img_start_x, img_end_x):
-    #         # Handle transparency if image has an alpha channel
-    #         if joystick_image.shape[2] == 4:
-    #             alpha = joystick_image[i, j, 3] / 255.0
-    #             for c in range(3):  # Apply to RGB channels only
-    #                 frame[start_y + i - img_start_y, start_x + j - img_start_x, c] = (
-    #                         alpha * joystick_image[i, j, c] +
-    #                         (1 - alpha) * frame[start_y + i - img_start_y, start_x + j - img_start_x, c]
-    #                 )
-    #         else:
-    #             frame[start_y + i - img_start_y, start_x + j - img_start_x] = joystick_image[i, j]
 
     return frame
 
